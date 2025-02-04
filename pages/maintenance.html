@@ -44,6 +44,26 @@
                 padding-right:10%;
                 padding-bottom: 40px;
             }
+
+            button {
+                background-color: #dbdbdb;
+                color: rgb(0, 0, 0);
+                border-radius: 16px;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin-top: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            button:hover {
+                background-color: #3496ff;
+                color: rgb(255, 255, 255);
+            }
         </style>
         <title>서버/사이트 유지보수 중</title>
     </head>
@@ -60,6 +80,10 @@
             <div class="content">
             <br>현재 서버/사이트의 유지보수 작업 중입니다. <sub>(벽콘센트 갈고있음)</sub>
             <br>예상 재개 시간: 19시 20분
+
+            <form action="https://cloud.1227.kr" method="post">
+                <button type="submit">다시 접속 (캐시 클리어)</button>
+            </form>
             </div>
         
         </div>
