@@ -120,6 +120,9 @@
                             <button class="btn btn-outline-light btn-lg btn-block" id="viewGallogButton">
                                 🔍 갤로그 보기
                             </button>
+                            <button class="btn btn-outline-light btn-lg btn-block" id="searchMuseumButton">
+                                🏛️ 박물관 조회 (<span id="year"></span>)
+                            </button>
                             <hr>
                             <a class ="btn btn-secondary btn-lg btn-block" href="https://msign.dcinside.com/login?r_url=https%3A%2F%2Fm.dcinside.com%2Fmanagement%2Fminor%2Favoid_direct%2Feuca" target="_blank">
                                 🔑 강제 로그인 후 직접 차단
@@ -194,10 +197,22 @@
                     if (ipid) {
                         window.open(`https://gallog.dcinside.com/${ipid}`, '_blank');
                     } else {
-                        alert('id 파라미터가 없습니다.');
+                        alert('ipid 파라미터가 없습니다.');
                     }
                 });
             }
+
+            // 박물관 검색 버튼 이벤트
+            const searchMuseumButton = document.getElementById('searchMuseumButton');
+            const year = new Date().getFullYear();
+            document.getElementById('year').innerText = year;
+            searchMuseumButton.addEventListener('click', function() {
+                if (ipid) {
+                    window.open(`https://museum.1227.kr/${year}/?stype=4&squery=${ipid}`, '_blank');
+                } else {
+                    alert('ipid 파라미터가 없습니다.');
+                }
+            });
         });
         
         // 클립보드 복사 함수
