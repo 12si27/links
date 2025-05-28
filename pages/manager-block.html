@@ -117,6 +117,9 @@
                             <button class="btn btn-outline-light btn-lg btn-block" id="viewPostButton">
                                 👀 글 보기
                             </button>
+                            <button class="btn btn-outline-light btn-lg btn-block" id="viewGallogButton">
+                                🔍 갤로그 보기
+                            </button>
                             <hr>
                             <a class ="btn btn-secondary btn-lg btn-block" href="https://msign.dcinside.com/login?r_url=https%3A%2F%2Fm.dcinside.com%2Fmanagement%2Fminor%2Favoid_direct%2Feuca" target="_blank">
                                 🔑 강제 로그인 후 직접 차단
@@ -179,7 +182,22 @@
                 } else {
                     alert('id 파라미터가 없습니다.');
                 }
-            });            
+            });        
+
+            // 갤로그 보기 버튼 이벤트
+            const viewGallogButton = document.getElementById('viewGallogButton');
+
+            if (ipid.includes('.')) {
+                viewGallogButton.style.display = 'none';
+            } else {
+                viewGallogButton.addEventListener('click', function() {
+                    if (id) {
+                        window.open(`https://gallog.dcinside.com/${ipid}`, '_blank');
+                    } else {
+                        alert('id 파라미터가 없습니다.');
+                    }
+                });
+            }
         });
         
         // 클립보드 복사 함수
